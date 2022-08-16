@@ -1,6 +1,6 @@
 package BFFSpring.BFF.domain.integrations;
 
-import BFFSpring.BFF.domain.entity.CepEntity;
+import BFFSpring.BFF.domain.entity.Cep.CepEntity;
 import feign.Headers;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;

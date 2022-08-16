@@ -1,6 +1,6 @@
 package BFFSpring.BFF.controllers;
 
-import BFFSpring.BFF.domain.entity.CepEntity;
+import BFFSpring.BFF.domain.entity.Cep.CepEntity;
 import BFFSpring.BFF.domain.integrations.ICep;
 import BFFSpring.BFF.model.CepDTO;
 import BFFSpring.BFF.model.Cliente;

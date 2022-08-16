@@ -1,4 +1,4 @@
-package BFFSpring.BFF.domain.entity;
+package BFFSpring.BFF.domain.entity.Cep;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
