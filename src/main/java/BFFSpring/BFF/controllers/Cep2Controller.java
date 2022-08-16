@@ -6,6 +6,7 @@ import BFFSpring.BFF.model.MenuDataResponse;
 import BFFSpring.BFF.services.CepService;
 import BFFSpring.BFF.services.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,10 +20,16 @@ public class Cep2Controller {
     @Autowired
     MenuService menuService;
 
-    @GetMapping("/cep/{cep}")
-    public ResponseEntity<CepDataResponse> getCepByCep(@PathVariable String cep)
+    @GetMapping("/cep")
+    public ResponseEntity<CepDataResponse> getCepByCep(@RequestParam(required = true) String cep)
     {
-        return ResponseEntity.ok(cepService.cliente(cep));
+        if (cep != null) {
+            return ResponseEntity.ok(cepService.cliente(cep));
+        }
+        else {
+            String message = String.format("Cannot revoke leadership because '%s' is not a leader");
+            return new ResponseEntity(HttpStatus.BAD_REQUEST);
+        }
     }
 
     @PostMapping("/cep")
