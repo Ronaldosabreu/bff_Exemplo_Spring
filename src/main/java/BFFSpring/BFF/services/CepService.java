@@ -7,6 +7,9 @@ import BFFSpring.BFF.model.CepDataResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class CepService {
     @Autowired
@@ -17,9 +20,15 @@ public class CepService {
         CepDataResponse cepDataResponse = new CepDataResponse();
 
         CepEntity cepentity = _cep.getCep(cep);
+
         CepDTO cepdto = new CepDTO();
-        cepdto.setCep(cepentity.getCep());
-        cepdto.setBairro(cepentity.getBairro());
+
+
+            cepdto.setCep(cepentity.getCep());
+            cepdto.setBairro(cepentity.getBairro());
+
+
+
 
         cepDataResponse.setData(cepdto);
 

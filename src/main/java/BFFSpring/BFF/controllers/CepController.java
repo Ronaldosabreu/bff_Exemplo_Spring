@@ -25,14 +25,14 @@ public class CepController {
     @Value("${application.name}")
     private String appName;
 
-    @GetMapping("/{cep}")
-    public CepDTO getCep(@PathVariable(value = "cep") String cep)
-    {
-        CepEntity cepentity = icep.getCep(cep);
-        CepDTO cepdto = new CepDTO();
-        cepdto.setCep(cepentity.getCep());
-        return cepdto;
-    }
+//    @GetMapping("/{cep}")
+//    public CepDTO getCep(@PathVariable(value = "cep") String cep)
+//    {
+//        CepEntity cepentity = icep.getCep(cep);
+//        CepDTO cepdto = new CepDTO();
+//        cepdto.setCep(cepentity.getCep());
+//        return cepdto;
+//    }
 
     @GetMapping("/header")
     @ResponseBody
@@ -58,14 +58,14 @@ public class CepController {
 
     }
 
-    @PutMapping()
-    public CepDTO getCepBody(@RequestBody CepDTO cep)
-    {
-        CepEntity cepentity = icep.getCep(cep.getCep());
-        CepDTO cepdto = new CepDTO();
-        cepdto.setCep(cepentity.getCep());
-        return cepdto;
-    }
+//    @PutMapping()
+//    public CepDTO getCepBody(@RequestBody CepDTO cep)
+//    {
+//        CepEntity cepentity = icep.getCep(cep.getCep());
+//        CepDTO cepdto = new CepDTO();
+//        cepdto.setCep(cepentity.getCep());
+//        return cepdto;
+//    }
 
 
 

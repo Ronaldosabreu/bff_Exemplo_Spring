@@ -21,15 +21,13 @@ public class Cep2Controller {
     MenuService menuService;
 
     @GetMapping("/cep")
-    public ResponseEntity<CepDataResponse> getCepByCep(@RequestParam(required = true) String cep)
+    public ResponseEntity<CepDataResponse> getCepByCep(@RequestParam String cep)
     {
-        if (cep != null) {
+        if (cep == null || cep =="" || cep.equals(""))
+            throw new RuntimeException("Cep não pode ser vazio / está invalido");
+
             return ResponseEntity.ok(cepService.cliente(cep));
-        }
-        else {
-            String message = String.format("Cannot revoke leadership because '%s' is not a leader");
-            return new ResponseEntity(HttpStatus.BAD_REQUEST);
-        }
+
     }
 
     @PostMapping("/cep")
